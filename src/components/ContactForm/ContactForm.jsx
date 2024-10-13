@@ -26,7 +26,7 @@ const ContactForm = ({ onAdd }) => {
   const handleSubmit = (values, actions) => {
     onAdd({
       // trick to generate unique id
-      id: (Date.now() + (Math.random().toFixed(3) * 1000)),
+      id: Date.now() + Math.random().toFixed(3) * 1000,
       ...values,
     });
     actions.resetForm();

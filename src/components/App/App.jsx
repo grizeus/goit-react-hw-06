@@ -25,19 +25,13 @@ function App() {
     });
   };
 
-  const addContact = newContact => {
-    setContacts(prevContacts => {
-      return [...prevContacts, newContact];
-    });
-  };
-
   const filteredContacts = contacts.filter(contact => {
     return contact.name.toLowerCase().includes(search.toLowerCase());
   });
 
   return (
     <div>
-      <ContactForm onAdd={addContact} />
+      <ContactForm />
       <SearchBox value={search} onFilter={setSearch} />
       <ContactList contacts={filteredContacts} handleDelete={deleteContact} />
     </div>
