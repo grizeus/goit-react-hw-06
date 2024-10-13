@@ -29,10 +29,6 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-
-    if (values === "") {
-      return;
-    }
     dispatch(addContact({
       // trick to generate unique id
       id: Date.now() + Math.random().toFixed(3) * 1000,
